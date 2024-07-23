@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+
+    <style>
+        /* 애니메이션을 정의할때 사용되는 기능 */
+        @keyframes trans1 {
+            /* 시작할떄 */
+            from {
+                background-color: green;
+                border: 1px solid black;
+            }
+            /* 끝날 떄 */
+            to {
+                background: yellow;
+                border-radius: 50px;
+                transform: rotateZ(360deg);
+                border: 3px solid red;
+            }
+        }
+
+        @Keyframes trans2 {
+            /* 진행 상황 중 진행상태 */
+            0% {
+                background-color: green;
+                border: 3px solid black;
+            }
+            30% {
+                transform:translate(50px, 50px);
+            }
+            50% {
+                background-color:hotpink;
+                transform:scale(1,2);
+                border: 3px solid yellow;
+            }
+        }
+        .div1 {
+            margin: 100;
+            width: 100px;
+            height : 100px;
+            background: gray;
+            animation-name: trans1;
+            animation-duration: 5s;
+            /*애니메이션의 방향을 교대로 반전하여실행
+            (첫번째 반복은 역방향, ) */
+            animation-direction: alternate-reverse;
+            animation-iteration-count: 2;
+        }
+        .div2 {
+            margin: 100px;
+            width: 100px;
+            height: 100px;
+            animation-name: trans2;
+            animation-duration: 1s;
+            /* 애니메이션이 한 번은 정방향, 그 다음에는 역방향으로 교대로 실행 */
+            animation-direction: alternate;
+            /* 무한히 반복 실행 */
+            animation-iteration-count: infinite;
+            
+        }
+        img {
+            margin: 100px;
+            width: 500px;
+            height: 500px;
+            animation-name: trans2;
+            animation-duration: 5s;
+            animation-direction: alternate;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>애니메이션</h1>
+    <div class="div1"></div>
+</body>
+</html>
